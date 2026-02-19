@@ -598,6 +598,7 @@ class Elements:
             bodyDef = box2d.b2BodyDef()
             if body['dynamic']:
                 bodyDef.type = box2d.b2_dynamicBody
+                bodyDef.bullet = True  # Fix for issue #63: Enable CCD to prevent collision tunneling
             bodyDef.position = body['position']
             bodyDef.userData = body['userData']
             bodyDef.angle = body['angle']
